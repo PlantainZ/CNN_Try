@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" addBOMForNewFiles="with NO BOM" />
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/00_LinearRegression/20201210_01.py" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/00_LinearRegression/20201211_02.py" charset="GBK" />
+  </component>
 </project>
