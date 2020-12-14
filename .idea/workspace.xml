@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/00_LinearRegression/20201210_01_dataGen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/00_LinearRegression/20201211_02_LinRegLearn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/00_LinearRegression/20201211_03_LinRegPrts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/01_iris/test01.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/00_LinearRegression/20201212_04_LinRegMine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/00_LinearRegression/20201212_05_FsnMNIST.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/CNN_Try.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CNN_Try.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iris/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/00_LinearRegression/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iris/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_iris/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/00_LinearRegression/20201211_03_LinRegPrts.py" beforeDir="false" afterPath="$PROJECT_DIR$/00_LinearRegression/20201211_03_LinRegPrts.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,17 +80,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/00_LinearRegression" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FaceRecognition-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\plantainz\OuO_DeepLearning\Practice\CNN_Try\00_LinearRegression" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.20201211_03_LinRegPrts">
+  <component name="RunManager" selected="Python.20201212_04_LinRegMine">
     <configuration name="20201210_01_dataGen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CNN_Try" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,8 +157,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="20201212_04_LinRegMine" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CNN_Try" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/00_LinearRegression" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/00_LinearRegression/20201212_04_LinRegMine.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.20201212_04_LinRegMine" />
         <item itemvalue="Python.20201211_03_LinRegPrts" />
         <item itemvalue="Python.20201210_01_dataGen" />
         <item itemvalue="Python.20201211_02_LinRegLearn" />
@@ -182,7 +200,9 @@
       <option name="presentableId" value="Default" />
       <updated>1607161208272</updated>
       <workItem from="1607161209653" duration="308000" />
-      <workItem from="1607652324419" duration="8027000" />
+      <workItem from="1607652324419" duration="10226000" />
+      <workItem from="1607669495807" duration="1078000" />
+      <workItem from="1607734065429" duration="17864000" />
     </task>
     <servers />
   </component>
@@ -228,11 +248,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CNN_Try$20201211_03_LinRegPrts.coverage" NAME="20201211_03_LinRegPrts Coverage Results" MODIFIED="1607659055641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/00_LinearRegression" />
+    <SUITE FILE_PATH="coverage/CNN_Try$20201211_03_LinRegPrts.coverage" NAME="20201211_03_LinRegPrts Coverage Results" MODIFIED="1607754706108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/00_LinearRegression" />
     <SUITE FILE_PATH="coverage/CNN_Try$20201211_02_LinRegLearn.coverage" NAME="20201211_02_LinRegLearn Coverage Results" MODIFIED="1607657787445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/00_LinearRegression" />
     <SUITE FILE_PATH="coverage/CNN_Try$20201210_01_dataGen.coverage" NAME="20201210_01_dataGen Coverage Results" MODIFIED="1607657794935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/00_LinearRegression" />
+    <SUITE FILE_PATH="coverage/CNN_Try$20201212_04_LinRegMine.coverage" NAME="20201212_04_LinRegMine Coverage Results" MODIFIED="1607757659736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/00_LinearRegression" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
