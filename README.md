@@ -1,7 +1,7 @@
 # CNN_Try
 > author : 剑怜情
 > 
-> thans  : 席纷
+> thanks  : 席纷
 
 对算法进行更细粒度的复盘与调整。
 
