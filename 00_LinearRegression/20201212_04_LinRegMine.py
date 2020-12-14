@@ -14,47 +14,42 @@ from mxnet.gluon import nn
 from mxnet.gluon import loss as gloss
 from mxnet.gluon import Trainer
 
-# 1.生成数据集
+# 生成数据集
 input_num = 2
 input_examples = 1000
-true_w = [2,-3.4]
-true_b = 4.2
+true_w = [2,5.1]
+true_b = -3.1
 features = nd.random.normal(scale=1,shape=(input_examples,input_num))
-labels = features[:,0] * true_w[0] +features[:,1] * true_w[1] + true_b
+labels = features[:,1]*true_w[1] + features[:,0]*true_w[0]+true_b
 labels += nd.random.normal(scale=0.01,shape=labels.shape)
 
-
-# 2. 组装、读取数据集
-# 设置batch_size > 打包监督数据 > 整一个可循环obj
-
+# 打包数据
 batch_size = 10
 dataset = gdata.ArrayDataset(features,labels)
 data_iter = gdata.DataLoader(dataset,batch_size,shuffle=True)
 
-for x,y in data_iter:
-    print(x,y)
-
-# 定义模型：生成容器 > 层 > w > 损失函数 > 优化器
+# 生成模型
 net = nn.Sequential()
 net.add(nn.Dense(1))
 net.initialize(init.Normal(sigma=0.01))
 loss = gloss.L2Loss()
 trainer = Trainer(net.collect_params(),'sgd',{'learning_rate':0.03})
 
-# 开始训练 > 定义epochs > 循环batch > 计算loss + 优化 > 输出误差
-num_epochs = 3
-for epoch in range(1,num_epochs+1):
-    for X,y in data_iter: # 每次都循环100个轮次。
+# 开始训练
+epochs = 4
+for epoch in range(1,epochs+1):
+    for x,y in data_iter:
         with autograd.record():
-            l = loss(net(X),y)
-        print("l数据！！：",l)
-        l.background()
-        trainer.step(batch_size)
+            logits = net(x)
+            l = loss(logits,y)
+        l.backward() # 薅到梯度
+        trainer.step(batch_size) # 更新参数~~~
+    l = loss(net(features),labels)
+    print('epoch: %d , loss: %f' %(epoch,l.mean().asnumpy()))
 
 
-num_epochs=3
-for epoch in range(1,num_epochs+1):
-    for X,y in data_iter:
-        with autograd.record():
-            l=loss(net(X),y)
-        l.background()
+
+
+
+
+

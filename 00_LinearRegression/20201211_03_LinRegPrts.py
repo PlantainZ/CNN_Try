@@ -16,7 +16,7 @@ from mxnet.gluon import loss as gloss
 # 1 # 生成数据集====================================================
 num_input = 2
 num_examples = 1000
-true_w = [2,-3.4]
+true_w = [2,-3.4] # 因为num_input 有两个维度呀宝贝！
 true_b =4.2
 feature = nd.random.normal(scale=1,shape=(num_examples,num_input))
 # 注意，labels是一个标量！！
@@ -44,7 +44,7 @@ for x,y in data_iter: # 会打印100个轮次
 net = nn.Sequential() # Sequential实例是，装很多层的容器。注意线性回归是单层网络
 net.add(nn.Dense(1)) # 全连接层在gluon中是一个Dense实例，在这定义该层输出个数为1
 
-# 初始化模型参数,但是不知道为什么这里为None
+# 初始化模型参数
 net.initialize(init.Normal(sigma=0.01)) # 指定权重参数每一个都在 初始化时 随机采样于均值为0，标准差为0.01的分布
 
 # 定义损失函数
@@ -52,6 +52,7 @@ loss = gloss.L2Loss() # 平方损失 / L2范数损失
 
 # 定义优化算法
 trainer = gluon.Trainer(net.collect_params(),'sgd',{'learning_rate':0.03})
+
 
 # 4 # 训练模型======================================================
 # 定义epochs > 循环batch > 计算loss + 优化 > 输出误差
@@ -63,11 +64,12 @@ for epoch in range(1,num_epochs+1):
             l = loss(net(X),y) # l长度:[batch_size(10),1]。
 
         l.backward() # 等价于执行l.sum.backward()，所有相加成一个元素。因为设定了输出层输出个数为1！
-        # 会求该变量有关模型参数的梯度
+        # 会求该变量有关模型参数的梯度。搞到梯度！嘻嘻！
 
+        # 会调用内部函数_update()更新params的权值
         trainer.step(batch_size) # 指明批量的大小，从而对批量中样本梯度求平均
-    l=loss(net(feature),labels)
-    print('epoch %d,loss:%f' %(epoch,l.mean().asnumpy()))
+    l=loss(net(feature),labels) # 用模型进行一次前向计算，看看模型的准确率。注意这里投入的是全部features!!!用的也是全部labels
+    print('epoch %d,loss:%f' %(epoch,l.mean().asnumpy())) # l.shape = [1000,]！！！表明它是投入了每个features单独计算！！所以求的是误差均值
 
 
 
