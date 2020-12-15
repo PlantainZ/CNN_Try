@@ -17,14 +17,13 @@
  
 ## 计划 / **< 正在实现 >**
 > 制式：mxnet --> tensorflow 2.x
-- **< 线性回归 >**
-- Fashion-MNIST
+- **< Fashion-MNIST >**
  
 &nbsp;
 
 
 ## 已实现
-- none
+- 线性回归 ( mxnet )
 
 &nbsp;
 
