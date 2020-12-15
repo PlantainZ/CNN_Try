@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20201214 patch">
-      <change afterPath="$PROJECT_DIR$/01_FsnMNIST/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/00_LinearRegression/20201212_04_LinRegMine.py" beforeDir="false" afterPath="$PROJECT_DIR$/00_LinearRegression/20201212_04_LinRegMine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/00_LinearRegression/20201212_05_FsnMNIST.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_FsnMNIST/20201215_01_FsnMNIST.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_iris/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/0x_iris/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_iris/template_iris.py" beforeDir="false" afterPath="$PROJECT_DIR$/0x_iris/template_iris.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_iris/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/0x_iris/test01.py" afterDir="false" />
+    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20201215 dataSet process">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -232,7 +225,7 @@
       <workItem from="1607669495807" duration="1078000" />
       <workItem from="1607734065429" duration="17864000" />
       <workItem from="1607907426773" duration="10891000" />
-      <workItem from="1607993355014" duration="8129000" />
+      <workItem from="1607993355014" duration="8542000" />
     </task>
     <task id="LOCAL-00001" summary="20201214 linReg done.">
       <created>1607928753667</created>
@@ -248,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607928906960</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="20201215 dataSet process">
+      <created>1608012945228</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608012945228</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -298,7 +298,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="20201214 linReg done." />
     <MESSAGE value="20201214 patch" />
-    <option name="LAST_COMMIT_MESSAGE" value="20201214 patch" />
+    <MESSAGE value="20201215 dataSet process" />
+    <option name="LAST_COMMIT_MESSAGE" value="20201215 dataSet process" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
