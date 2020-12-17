@@ -28,12 +28,12 @@ data_iter = iter(lin_data)
 
 # 生成模型
 model = tf.keras.models.Sequential()
-# model.add(tf.keras.layers.Dense(1,kernel_initializer=tf.initializers.RandomNormal(stddev=0.01)))
-model.add(tf.keras.layers.Dense(1,activation='softmax'))
+model.add(tf.keras.layers.Dense(1,kernel_initializer=tf.initializers.RandomNormal(stddev=0.01)))
+# model.add(tf.keras.layers.Dense(1,activation='softmax'))
 
 loss = tf.losses.MeanSquaredError() # 均方误差~
-# opt = tf.optimizers.SGD(learning_rate=0.03)
-opt = tf.optimizers.Adam(1e-3)
+opt = tf.optimizers.SGD(learning_rate=0.03)
+# opt = tf.optimizers.Adam(1e-3)
 
 # 开始轮滚
 loss_history = []

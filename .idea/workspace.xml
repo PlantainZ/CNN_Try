@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20201215 readme plan patch">
-      <change afterPath="$PROJECT_DIR$/00_LinearRegression/20201216_05_LinRegTF2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0a_iris/iris_01.py" afterDir="false" />
+    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20201215 LinearRegression , mxnet--&gt;tensorflow 2.x">
+      <change afterPath="$PROJECT_DIR$/01_FsnMNIST/20201217_02_FsnMNIST.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01_FsnMNIST/test01.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0a_iris/20201216_01_iris.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/CNN_Try.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CNN_Try.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0x_iris/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/0a_iris/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0x_iris/template_iris.py" beforeDir="false" afterPath="$PROJECT_DIR$/0a_iris/template_iris.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0x_iris/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/0a_iris/test01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/00_LinearRegression/20201216_05_LinRegTF2.py" beforeDir="false" afterPath="$PROJECT_DIR$/00_LinearRegression/20201216_05_LinRegTF2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_FsnMNIST/20201215_01_FsnMNIST.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/01_FsnMNIST/20201215_01_FsnMNIST_data.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_FsnMNIST/20201215_01_FsnMNIST.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_FsnMNIST/20201215_01_FsnMNIST_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,51 +96,7 @@
       <recent name="D:\plantainz\OuO_DeepLearning\Practice\CNN_Try\01_FsnMNIST" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.20201216_05_LinRegTF2">
-    <configuration name="20201210_01_dataGen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="CNN_Try" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/00_LinearRegression" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/00_LinearRegression/20201210_01_dataGen.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="20201211_03_LinRegPrts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="CNN_Try" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/00_LinearRegression" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/00_LinearRegression/20201211_03_LinRegPrts.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.20201217_02_FsnMNIST">
     <configuration name="20201212_04_LinRegMine" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CNN_Try" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,7 +119,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="20201215_01_FsnMNIST" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="20201216_01_iris" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CNN_Try" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -170,12 +127,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/01_FsnMNIST" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/0a_iris" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/01_FsnMNIST/20201215_01_FsnMNIST.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0a_iris/20201216_01_iris.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -206,13 +163,57 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="20201217_02_FsnMNIST" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CNN_Try" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/01_FsnMNIST" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/01_FsnMNIST/20201217_02_FsnMNIST.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CNN_Try" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/01_FsnMNIST" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/01_FsnMNIST/test01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.20201217_02_FsnMNIST" />
+        <item itemvalue="Python.test01" />
+        <item itemvalue="Python.20201216_01_iris" />
         <item itemvalue="Python.20201216_05_LinRegTF2" />
         <item itemvalue="Python.20201212_04_LinRegMine" />
-        <item itemvalue="Python.20201215_01_FsnMNIST" />
-        <item itemvalue="Python.20201211_03_LinRegPrts" />
-        <item itemvalue="Python.20201210_01_dataGen" />
       </list>
     </recent_temporary>
   </component>
@@ -234,7 +235,8 @@
       <workItem from="1607907426773" duration="10891000" />
       <workItem from="1607993355014" duration="10933000" />
       <workItem from="1608030864661" duration="958000" />
-      <workItem from="1608080697168" duration="14689000" />
+      <workItem from="1608080697168" duration="18770000" />
+      <workItem from="1608169739251" duration="11190000" />
     </task>
     <task id="LOCAL-00001" summary="20201214 linReg done.">
       <created>1607928753667</created>
@@ -271,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608013118065</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="20201215 LinearRegression , mxnet--&gt;tensorflow 2.x">
+      <created>1608103098196</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1608103098197</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -323,7 +332,8 @@
     <MESSAGE value="20201214 patch" />
     <MESSAGE value="20201215 dataSet process" />
     <MESSAGE value="20201215 readme plan patch" />
-    <option name="LAST_COMMIT_MESSAGE" value="20201215 readme plan patch" />
+    <MESSAGE value="20201215 LinearRegression , mxnet--&gt;tensorflow 2.x" />
+    <option name="LAST_COMMIT_MESSAGE" value="20201215 LinearRegression , mxnet--&gt;tensorflow 2.x" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -352,6 +362,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CNN_Try$20201216_01_iris.coverage" NAME="20201216_01_iris Coverage Results" MODIFIED="1608106149314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/0a_iris" />
+    <SUITE FILE_PATH="coverage/CNN_Try$test01.coverage" NAME="test01 Coverage Results" MODIFIED="1608176728407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01_FsnMNIST" />
+    <SUITE FILE_PATH="coverage/CNN_Try$20201217_02_FsnMNIST.coverage" NAME="20201217_02_FsnMNIST Coverage Results" MODIFIED="1608177115653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01_FsnMNIST" />
     <SUITE FILE_PATH="coverage/CNN_Try$20201216_05_LinRegTF2.coverage" NAME="20201216_05_LinRegTF2 Coverage Results" MODIFIED="1608102888956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/00_LinearRegression" />
     <SUITE FILE_PATH="coverage/CNN_Try$20201211_03_LinRegPrts.coverage" NAME="20201211_03_LinRegPrts Coverage Results" MODIFIED="1607918134285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/00_LinearRegression" />
     <SUITE FILE_PATH="coverage/CNN_Try$20201215_01_FsnMNIST.coverage" NAME="20201215_01_FsnMNIST Coverage Results" MODIFIED="1608004430219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01_FsnMNIST" />
