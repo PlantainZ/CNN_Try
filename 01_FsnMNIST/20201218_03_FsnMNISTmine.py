@@ -67,3 +67,5 @@ trianer = gluon.Trainer(net.collect_params(),'sgd',{'learning_rate':0.1})
 
 
 
+
+

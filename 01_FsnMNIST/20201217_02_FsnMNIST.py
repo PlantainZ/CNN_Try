@@ -5,7 +5,7 @@
  @Script     : 用FsnMNIST 实现softmax回归的从零实现
  @IsAvailable: true
  @Time       : 2020/12/17-18 11:19
- @Author     : 剑怜情
+ @Author     : 剑怜情、席纷
 '''
 
 import d2lzh as d2l
