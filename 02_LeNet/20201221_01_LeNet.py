@@ -52,20 +52,59 @@ print(ctx)
 
 
 # 3 # 开始操作 ==================================================================
-def evaluate_accuracy(data_iter,net,ctx):
-    acc_sum,n = nd.array([0],ctx=ctx),0
-    for X,y in data_iter:
-        X,y = X.as_in_context(ctx),y.as_in_context(y).astype('float32')
-        acc_sum = (net(X).argmax(axis=1) == y).sum()
-        n+=y.size
-    return acc_sum.asscalar() / n
-
 
 def evaluate_accuracy(data_iter,net,ctx):
     acc_sum,n = nd.array([0],ctx=ctx),0
     for X,y in data_iter:
         # 如果ctx代表GPU及相应显存，将数据复制到显存上
         X,y = X.as_in_context(ctx),y.as_in_context(ctx).astype('float32')
-        acc_sum = (net(X).argmax(axis=1) == y).sum()
+        acc_sum = (net(X).argmax(axis=1) == y).sum() # argmax在mxnet中会返回浮点数
         n+=y.size
-    return acc_sum.asscalar()/n
+    return acc_sum.asscalar()/n # 这里转成标量
+
+
+def train_LeNet(train_iter,test_iter,net,
+              batch_size,num_epochs,trainer,ctx):
+    print('training on',ctx)
+    loss = gloss.SoftmaxCrossEntropyLoss()
+    for epoch in range(num_epochs):
+        train_l_sum,train_acc_sum,n,start= 0.0,0.0,0,time.time()
+        for X,y in train_iter:
+            X,y = X.as_in_context(ctx),y.as_in_context(ctx)
+            with autograd.record():
+                y_hat = net(X)
+                l = loss(y_hat,y).sum()
+            l.backward()
+            trainer.step(batch_size)
+
+            # 都转化成标量！！
+            y = y.astype('float32')
+            train_l_sum = l.asscalar()
+            train_acc_sum = (y_hat.argmax(axis =1 ) ==y).sum().asscalar()
+            n+=y.size
+            test_acc = evaluate_accuracy(test_iter,net,ctx)
+        print('epoch %d,loss %.3f,train_acc %.4f,test_acc %.4f,time: %.1f sec' %(epoch+1,train_l_sum/n,train_acc_sum/n,test_acc,start-time.time()))
+
+# 4 # 走你！===============================================================
+lr,epoch = 0.1,5
+net.initialize(force_reinit=True,ctx=ctx,init=init.Xavier()) # ?
+trainer = gluon.Trainer(net.collect_params(),'sgd',{'learning_rate':lr})
+train_LeNet(train_iter,test_iter,net,batch_size,epoch,trainer,ctx)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
