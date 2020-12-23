@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20201222 LeNet(v.mx) done.">
-      <change afterPath="$PROJECT_DIR$/02_KaggleTry/20201223_housePrice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02_KaggleTry/__init__.py" afterDir="false" />
+    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20201223 Kaggle example try.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02_LeNet/20201221_01_LeNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/20201221_01_LeNet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/02_LeNet/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02_KaggleTry/20201223_housePrice.py" beforeDir="false" afterPath="$PROJECT_DIR$/02_KaggleTry/20201223_housePrice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +265,8 @@
       <workItem from="1608598828323" duration="10745000" />
       <workItem from="1608622718042" duration="5341000" />
       <workItem from="1608633310595" duration="217000" />
-      <workItem from="1608685314449" duration="10700000" />
+      <workItem from="1608685314449" duration="11118000" />
+      <workItem from="1608709983089" duration="11153000" />
     </task>
     <task id="LOCAL-00001" summary="20201214 linReg done.">
       <created>1607928753667</created>
@@ -339,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608618132344</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="20201223 Kaggle example try.">
+      <created>1608705334844</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1608705334844</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -396,7 +402,8 @@
     <MESSAGE value="20201218 Softmax(mxnet) Learning" />
     <MESSAGE value="20201221 LeNet" />
     <MESSAGE value="20201222 LeNet(v.mx) done." />
-    <option name="LAST_COMMIT_MESSAGE" value="20201222 LeNet(v.mx) done." />
+    <MESSAGE value="20201223 Kaggle example try." />
+    <option name="LAST_COMMIT_MESSAGE" value="20201223 Kaggle example try." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

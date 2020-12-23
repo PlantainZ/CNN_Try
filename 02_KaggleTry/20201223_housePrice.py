@@ -6,15 +6,19 @@
  @IsAvailable: 
  @Time       : 2020/12/23 9:30
  @Author     : 剑怜情
+
+ 原kaggle账号忘记了！！又重新申请了。
+ 在kaggle上偷偷打个比赛都要把自己菜哭了。。。
+ 滚回来重新整理。
 '''
-import d2lzh
+import d2lzh as d2l
 import numpy as np
 import pandas as pd
 from mxnet import autograd,gluon,init,nd
 from mxnet.gluon import data as gdata,loss as gloss,nn
 
 
-# 1 # 读取数据集，并观察数据=================================================
+# 1 # 读取数据集，并观察数据===========================================================================
 csv_path = "D:\plantainz\OuO_DeepLearning\DataSet\housePrices"
 train_data = pd.read_csv(csv_path + "\\train.csv")
 test_data = pd.read_csv(csv_path + "\\test.csv")
@@ -30,7 +34,7 @@ all_features = pd.concat((train_data.iloc[:,1:-1],test_data.iloc[:,1:]))
 print('all_features :',all_features)
 
 
-# 2 # 预处理数据集 ==========================================================
+# 2 # 预处理数据集 ====================================================================================
 # 进行标准化。均值为μ，标准差为~。
 # 每个值先减去μ再除以~
 # 缺失的特征集就替换为均值！
@@ -67,7 +71,7 @@ train_labels = train_labels.reshape((-1,1)) # 整成一列
 print('\nIn the End,train_labels:',train_labels)
 
 
-# 3 # 走你！ ===========================================================
+# 3 # 走你！ ==========================================================================================
 loss = gloss.L2Loss()
 
 def get_net():
@@ -104,11 +108,46 @@ def train(net,train_features,train_labels,
             test_ls.append(log_rmse(net,test_features,test_labels))
     return train_ls,test_ls
 
-# 4 # K fold 交叉验证！！ =============================================================
+
+# 4 # K fold 交叉验证！！ ================================================================================
+# > 确定k值 > 生成分割好的part > 分发这些part
+# > 分K份 > 获取网络 >
 def get_k_fold_data(k,i,X,y):
     assert k > 1
     fold_size = X.shape([0]) // k   # 整除k！！
     x_train,y_train = None,None
     for j in range(k):
-        idx = slice(j * fold_size,(j+1) * fold_size)
-        X_part,y_part = X[idx,:],y[idx]
+        idx = slice(j * fold_size,(j+1) * fold_size) # 要拿出来做验证集的那一小部分
+        X_part,y_part = X[idx,:],y[idx] # 只是分割一份数据。这里的X是表示取idx行，但是它们的列要取全部！！而标签固定只有一列鸭！所以只写行
+
+        if j == i : # 如果 = 指定索引，那就生成验证集
+            X_valid,y_valid = X_part,y_part
+        elif X_train is None: # 如果不是，且X_train是空的，那就生成训练集。
+            X_train,y_train = X_part,y_part
+        else : # 如果X_train 不空，那就和先前生成的train集缝合
+            X_train = nd.concat(X_train,X_part,dim = 0)
+            y_train = nd.concat(y_train,y_part,dim=0)
+    return X_train,y_train,X_valid,y_valid
+
+def k_fold(k,X_train,y_train,num_epochs,
+           learning_rate,weight_decay,batch_size):
+    train_l_sum ,valid_l_sum = 0,0
+
+    for i in range(k):
+        data = get_k_fold_data(k,i,X_train,y_train)
+        net = get_net()
+        # *data 前面有*是因为表示输入任意个！！
+        train_ls,vaild_ls = train(net,*data,num_epochs,learning_rate,weight_decay,batch_size)
+        train_l_sum += train_ls[-1]
+        valid_l_sum += vaild_ls[-1]
+
+        if i==0:
+            d2l.semilogy(range(1,num_epochs+1),train_ls,'epochs','rmse',
+                         range(1,num_epochs+1),vaild_ls,
+                         ['train','valid']) # 作图函数，p62
+        print('fold %d ,train rmse %f,valid rmse %f' %(i,train_ls[-1],vaild_ls[-1]))
+    return train_l_sum / k ,valid_l_sum / k
+
+
+
+
