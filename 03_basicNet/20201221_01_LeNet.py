@@ -83,7 +83,8 @@ def train_LeNet(train_iter,test_iter,net,
             train_acc_sum = (y_hat.argmax(axis =1 ) ==y).sum().asscalar()
             n+=y.size
             test_acc = evaluate_accuracy(test_iter,net,ctx)
-        print('epoch %d,loss %.3f,train_acc %.4f,test_acc %.4f,time: %.1f sec' %(epoch+1,train_l_sum/n,train_acc_sum/n,test_acc,start-time.time()))
+        print('epoch %d,loss %.3f,train_acc %.4f,test_acc %.4f,time: %.1f sec'
+              %(epoch+1,train_l_sum/n,train_acc_sum/n,test_acc,time.time()-start))
 
 # 4 # 走你！===============================================================
 lr,epoch = 0.1,5
