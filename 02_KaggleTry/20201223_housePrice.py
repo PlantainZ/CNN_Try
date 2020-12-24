@@ -27,7 +27,7 @@ print("train_data:",train_data.shape)
 print("test_data:",test_data.shape)
 
 print("\n2. 看一眼数据集前4个样本的，前四个特征 + 后两个特征 + 标签：")
-print(train_data.iloc[0:4,[0,1,2,3,-3,-2,-1]])
+print(train_data.iloc[0:4,[0,1,2,3,-3,-2,-1]]) # 注意只有指定显示位置的时候，才需要[]，否则范围不需要[]
 
 # 忽略第一列的id,把测试数据 放到 训练数据的下方，连接成一排数据。看行数！！
 all_features = pd.concat((train_data.iloc[:,1:-1],test_data.iloc[:,1:]))
@@ -38,11 +38,13 @@ print('all_features :',all_features)
 # 进行标准化。均值为μ，标准差为~。
 # 每个值先减去μ再除以~
 # 缺失的特征集就替换为均值！
+# 如果不加.index，那输出的就是字段名称+类型，加了就显示字段名称，并显示为数组。
+# 注意一下，all_features.types 类型是Series!!!![]里面的结果也是Series！！Series.index可以得到字段数据！！
 numeric_features = all_features.dtypes[all_features.dtypes != 'object'].index # 获取值为数字的 特征名称
 print('numeric_features:',numeric_features)
 print('numeric_features.shape:',numeric_features.shape)
 
-# 这里的all_features，选了所有纵列。 【为什么？】
+# all_features的type是DataFrame！！！输入字段名能得到数字！！
 all_features[numeric_features] = all_features[numeric_features].apply(lambda x:(x - x.mean()) / (x.std()))
 print('\nall_features[numeric_features]:',all_features[numeric_features])
 print('all_features[\'MSSubClass\']:',all_features['MSSubClass'])
@@ -59,15 +61,15 @@ n_train = train_data.shape[0]
 print('n_train:',n_train)
 
 # 重新再分割训练 & 测试数据
-train_features = nd.array(all_features[:n_train].values)
+train_features = nd.array(all_features[:n_train].values) # .values加不加都问题不大。
 test_features = nd.array(all_features[n_train:].values)
 print('\n Then we get dataSet: ================================================')
 print('train_features:',train_features)
 print('test_features:',test_features)
 
-train_labels = nd.array(train_data.SalePrice.values)
+train_labels = nd.array(train_data.SalePrice.values) # values加不加都！问题不大
 print('\n before reshape((-1,1)),train_labels:',train_labels)
-train_labels = train_labels.reshape((-1,1)) # 整成一列
+train_labels = train_labels.reshape((-1,1)) # 将一行整成一列
 print('\nIn the End,train_labels:',train_labels)
 
 
