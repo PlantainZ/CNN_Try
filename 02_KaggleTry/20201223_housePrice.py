@@ -29,7 +29,7 @@ print("test_data:",test_data.shape)
 print("\n2. 看一眼数据集前4个样本的，前四个特征 + 后两个特征 + 标签：")
 print(train_data.iloc[0:4,[0,1,2,3,-3,-2,-1]]) # 注意只有指定显示位置的时候，才需要[]，否则范围不需要[]
 
-# 忽略第一列的id,把测试数据 放到 训练数据的下方，连接成一排数据。看行数！！
+# 忽略第一列的id和最后一列的label,把测试数据 放到 训练数据的下方，连接成一排数据。看行数！！
 all_features = pd.concat((train_data.iloc[:,1:-1],test_data.iloc[:,1:]))
 print('all_features :',all_features)
 
@@ -67,6 +67,7 @@ print('\n Then we get dataSet: ================================================'
 print('train_features:',train_features)
 print('test_features:',test_features)
 
+# ↓ ↓ ↓也可以写成 train_labels = nd.array(train_data.iloc[:,-1])
 train_labels = nd.array(train_data.SalePrice.values) # values加不加都！问题不大
 print('\n before reshape((-1,1)),train_labels:',train_labels)
 train_labels = train_labels.reshape((-1,1)) # 将一行整成一列
@@ -84,8 +85,10 @@ def get_net():
 
 def log_rmse(net,features,labels):
     # <1的数设置为1，取对数时候的值就会更稳定!
+    # limits the values of a tensor to between min and max.[nd.clip(x,min,max)]
     clipped_preds = nd.clip(net(features),1,float('inf'))
-    rmse = nd.sqrt(2**loss(clipped_preds.log(),labels.log()).mean())
+    # 下面的2是为了抵消掉L2Loss的自带1/2的乘子 --->  Σ(y-y_hat)²
+    rmse = nd.sqrt(2*loss(clipped_preds.log(),labels.log()).mean())
     return rmse.asscalar()
 
 def train(net,train_features,train_labels,
@@ -106,7 +109,8 @@ def train(net,train_features,train_labels,
             l.backward()
             trainer.step(batch_size)
         train_ls.append(log_rmse(net,train_features,train_labels))
-        if test_labels is not None:
+
+        if test_labels is not None: # ??????为神莫啊啊aaaaaaa
             test_ls.append(log_rmse(net,test_features,test_labels))
     return train_ls,test_ls
 
@@ -116,8 +120,8 @@ def train(net,train_features,train_labels,
 # > 分K份 > 获取网络 >
 def get_k_fold_data(k,i,X,y):
     assert k > 1
-    fold_size = X.shape([0]) // k   # 整除k！！
-    x_train,y_train = None,None
+    fold_size = X.shape[0] // k   # 整除k！！
+    X_train,y_train = None,None
     for j in range(k):
         idx = slice(j * fold_size,(j+1) * fold_size) # 要拿出来做验证集的那一小部分
         X_part,y_part = X[idx,:],y[idx] # 只是分割一份数据。这里的X是表示取idx行，但是它们的列要取全部！！而标签固定只有一列鸭！所以只写行
@@ -151,5 +155,30 @@ def k_fold(k,X_train,y_train,num_epochs,
     return train_l_sum / k ,valid_l_sum / k
 
 
+# 5 # 模型选择 ===========================================================
+k,num_epochs,lr,weight_decay,batch_size = 5,100,5,0,64
+train_l,valid_l = k_fold(k,train_features,train_labels,
+                         num_epochs,lr,weight_decay,batch_size)
+print('%d-fold validation: avg train rmse %f , avg valid rmse %f'
+      %(k,train_l,valid_l))
 
 
+# 6 # 预测 ===========================================================
+def train_and_pred(train_features,test_features,
+                   train_labels,test_data,
+                   num_epochs,lr,weight_decay,batch_size):
+    net = get_net()
+    train_ls,_ = train(net,train_features,train_labels,None,None,
+                       num_epochs,lr,weight_decay,batch_size)
+    d2l.semilogy(range(1,num_epochs+1),train_ls,'epochs','rmse')
+    print('train rmse %f' %train_ls[-1])
+    preds = net(test_features).asnumpy()
+    test_data['SalePrice'] = pd.Series(preds.reshape(1,-1)[0])
+    submission = pd.concat([test_data['Id'],test_data['SalePrice']],axis=1)
+    submission.to_csv('submission.csv',index=False)
+
+
+
+# 7 # 执行 ==========================================================
+train_and_pred(train_features,test_features,train_labels,test_data,
+               num_epochs,lr,weight_decay,batch_size)
