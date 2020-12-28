@@ -2,14 +2,16 @@
 # -*- coding:utf-8 -*-
 
 '''
- @Script     : 
- @IsAvailable: 
+ @Script     : 房价预测 简洁版本
+ @IsAvailable: false
  @Time       : 2020/12/24 18:50
  @Author     : 剑怜情
 '''
+
 import pandas as pd
 from mxnet import nd,gluon,autograd
 from mxnet.gluon import loss as gloss,nn,data as gdata
+import d2lzh as d2l
 
 # 1 # 读取数据 / 练习==============================================
 csv_path = "D:\plantainz\OuO_DeepLearning\DataSet\housePrices" # company
@@ -59,20 +61,31 @@ def train(train_features,train_labels,
     train_iter = gdata.DataLoader(
         gdata.ArrayDataset(train_features,train_labels),batch_size,shuffle=True
     )
+
     trainer = gluon.Trainer(net.collect_params(),'adam',{'learning_rate':learning_rate,'wd':weight_decay})
 
     for epoch in range(num_epochs):
-        for X,y in train_iter:
+        for X,y in range(train_iter):
             with autograd.record():
                 y_hat = net(X)
-                l = loss(y,y_hat).sum()
+                l = loss(y_hat,y).sum()
             l.backward()
             trainer.step(batch_size)
-
         train_ls.append(log_rmse(net,train_features,train_labels))
+
         if test_labels is not None:
             test_ls.append(log_rmse(net,test_features,test_labels))
     return train_ls,test_ls
+
+# 5 # 模型选择 ==============================================================
+# > 设置超参数 > 产出
+def get_k_fold_data(k,i,X,y):
+    assert k > 1
+    fold_size = X.shape[0] // k
+    X_train,y_train = None,None
+    for j in range(k):
+        idx = slice(j*fold_size,(j+1)*fold_size)
+        X_part,y_part =
 
 
 

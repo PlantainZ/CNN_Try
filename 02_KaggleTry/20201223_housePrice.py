@@ -2,8 +2,8 @@
 # -*- coding:utf-8 -*-
 
 '''
- @Script     : 
- @IsAvailable: 
+ @Script     : 房价预测 详细
+ @IsAvailable: true
  @Time       : 2020/12/23 9:30
  @Author     : 剑怜情
 
@@ -11,6 +11,7 @@
  在kaggle上偷偷打个比赛都要把自己菜哭了。。。
  滚回来重新整理。
 '''
+
 import d2lzh as d2l
 import numpy as np
 import pandas as pd
@@ -118,7 +119,7 @@ def train(net,train_features,train_labels,
 # 4 # K fold 交叉验证！！ ================================================================================
 # > 确定k值 > 生成分割好的part > 分发这些part
 # > 分K份 > 获取网络 >
-def get_k_fold_data(k,i,X,y):
+def get_k_fold_data(k,i,X,y): # 重点在于生成x_part & y_part
     assert k > 1
     fold_size = X.shape[0] // k   # 整除k！！
     X_train,y_train = None,None
@@ -135,27 +136,30 @@ def get_k_fold_data(k,i,X,y):
             y_train = nd.concat(y_train,y_part,dim=0)
     return X_train,y_train,X_valid,y_valid
 
-def k_fold(k,X_train,y_train,num_epochs,
+
+def k_fold(k,X_train,y_train,num_epochs, # 重点在于关乎data生成 --> 投入训练得到误差
            learning_rate,weight_decay,batch_size):
     train_l_sum ,valid_l_sum = 0,0
 
+    # 共k次训练，每次训练又有epochs轮！！！
     for i in range(k):
         data = get_k_fold_data(k,i,X_train,y_train)
         net = get_net()
         # *data 前面有*是因为表示输入任意个！！
-        train_ls,vaild_ls = train(net,*data,num_epochs,learning_rate,weight_decay,batch_size)
-        train_l_sum += train_ls[-1]
-        valid_l_sum += vaild_ls[-1]
+        train_ls,valid_ls = train(net,*data,num_epochs,learning_rate,weight_decay,batch_size)
+        train_l_sum += train_ls[-1] # 取最后一个批次的损失
+        valid_l_sum += valid_ls[-1]
 
-        if i==0:
+        if i==0: # 如果是首个k-fold,就画图
             d2l.semilogy(range(1,num_epochs+1),train_ls,'epochs','rmse',
-                         range(1,num_epochs+1),vaild_ls,
+                         range(1,num_epochs+1),valid_ls,
                          ['train','valid']) # 作图函数，p62
-        print('fold %d ,train rmse %f,valid rmse %f' %(i,train_ls[-1],vaild_ls[-1]))
+        print('fold %d ,train rmse %f,valid rmse %f' %(i,train_ls[-1],valid_ls[-1]))
     return train_l_sum / k ,valid_l_sum / k
 
 
 # 5 # 模型选择 ===========================================================
+# > 设置超参数 >
 k,num_epochs,lr,weight_decay,batch_size = 5,100,5,0,64
 train_l,valid_l = k_fold(k,train_features,train_labels,
                          num_epochs,lr,weight_decay,batch_size)
@@ -170,8 +174,10 @@ def train_and_pred(train_features,test_features,
     net = get_net()
     train_ls,_ = train(net,train_features,train_labels,None,None,
                        num_epochs,lr,weight_decay,batch_size)
+
     d2l.semilogy(range(1,num_epochs+1),train_ls,'epochs','rmse')
     print('train rmse %f' %train_ls[-1])
+
     preds = net(test_features).asnumpy()
     test_data['SalePrice'] = pd.Series(preds.reshape(1,-1)[0])
     submission = pd.concat([test_data['Id'],test_data['SalePrice']],axis=1)
