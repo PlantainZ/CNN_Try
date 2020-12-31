@@ -22,7 +22,7 @@ from mxnet.gluon import data as gdata,loss as gloss,nn
 # 1 # 读取数据集，并观察数据===========================================================================
 csv_path = "D:\plantainz\OuO_DeepLearning\DataSet\housePrices"
 train_data = pd.read_csv(csv_path + "\\train.csv")
-test_data = pd.read_csv(csv_path + "\\test.csv")
+test_data = pd.read_csv(csv_path + "\\test.csv") # 注意，这个文件没有labels的！(也就是最后一列
 print("1. 看一眼数据集的形状：")
 print("train_data:",train_data.shape)
 print("test_data:",test_data.shape)
@@ -53,7 +53,7 @@ print('all_features[\'MSSubClass\']:',all_features['MSSubClass'])
 # 标准化后，每个特征的均值都变成0，所以直接用0来替换缺失值
 all_features[numeric_features] = all_features[numeric_features].fillna(0)
 
-# 离散数值转为指示特征。
+# 离散数值转为指示特征。(即新建列，取值为[0/1])
 all_features = pd.get_dummies(all_features,dummy_na=True)
 print('after pd.get_dummies,all_features.shape:',all_features.shape) # 总特征数直接从79 -> 331
 
@@ -111,7 +111,8 @@ def train(net,train_features,train_labels,
             trainer.step(batch_size)
         train_ls.append(log_rmse(net,train_features,train_labels))
 
-        if test_labels is not None: # ??????为神莫啊啊aaaaaaa
+        if test_labels is not None: # 如果有传入测试数据的话，就一并也做测试集损失！
+                                    # 因为到最后的train_and_pred()是不带k-fold玩的！
             test_ls.append(log_rmse(net,test_features,test_labels))
     return train_ls,test_ls
 
@@ -142,19 +143,21 @@ def k_fold(k,X_train,y_train,num_epochs, # 重点在于关乎data生成 --> 投�
     train_l_sum ,valid_l_sum = 0,0
 
     # 共k次训练，每次训练又有epochs轮！！！
-    for i in range(k):
+    for i in range(k): # 准备训练，为了获得误差！！然后画图。
         data = get_k_fold_data(k,i,X_train,y_train)
         net = get_net()
         # *data 前面有*是因为表示输入任意个！！
         train_ls,valid_ls = train(net,*data,num_epochs,learning_rate,weight_decay,batch_size)
-        train_l_sum += train_ls[-1] # 取最后一个批次的损失
+        train_l_sum += train_ls[-1] # 取最后一个批次的损失,只是为了取损失！！
         valid_l_sum += valid_ls[-1]
 
-        if i==0: # 如果是首个k-fold,就画图
+        if i==0: # 如果是首个k-fold,就画图.别问为啥，再问自己改
+            print('i draw once!!!')
             d2l.semilogy(range(1,num_epochs+1),train_ls,'epochs','rmse',
                          range(1,num_epochs+1),valid_ls,
                          ['train','valid']) # 作图函数，p62
         print('fold %d ,train rmse %f,valid rmse %f' %(i,train_ls[-1],valid_ls[-1]))
+
     return train_l_sum / k ,valid_l_sum / k
 
 
@@ -167,7 +170,7 @@ print('%d-fold validation: avg train rmse %f , avg valid rmse %f'
       %(k,train_l,valid_l))
 
 
-# 6 # 预测 ===========================================================
+# 6 # 为了和上边k-fold训练作对比！这是没有k-fold验证的训练！===================
 def train_and_pred(train_features,test_features,
                    train_labels,test_data,
                    num_epochs,lr,weight_decay,batch_size):
@@ -178,6 +181,7 @@ def train_and_pred(train_features,test_features,
     d2l.semilogy(range(1,num_epochs+1),train_ls,'epochs','rmse')
     print('train rmse %f' %train_ls[-1])
 
+    # 直接将test_data的最后一列labels填上预测值，然后生成csv
     preds = net(test_features).asnumpy()
     test_data['SalePrice'] = pd.Series(preds.reshape(1,-1)[0])
     submission = pd.concat([test_data['Id'],test_data['SalePrice']],axis=1)

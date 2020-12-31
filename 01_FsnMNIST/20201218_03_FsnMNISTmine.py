@@ -48,7 +48,6 @@ def cross_entropy(y_hat,y):
 def accuracy(y_hat,y):
     return (y_hat.argmax(axis=1) == y.astype('float32')).mean().asscalar()
 
-
 num_epoch=5
 trianer = gluon.Trainer(net.collect_params(),'sgd',{'learning_rate':0.1})
 
