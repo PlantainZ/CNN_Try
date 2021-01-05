@@ -139,7 +139,7 @@ def get_k_fold_data(k,i,X,y): # 重点在于生成x_part & y_part
 
 
 def k_fold(k,X_train,y_train,num_epochs, # 重点在于关乎data生成 --> 投入训练得到误差
-           learning_rate,weight_decay,batch_size):
+           learning_rate,weight_decay,batch_size): # 注意只投入训练数据！！
     train_l_sum ,valid_l_sum = 0,0
 
     # 共k次训练，每次训练又有epochs轮！！！
@@ -185,7 +185,7 @@ def train_and_pred(train_features,test_features,
     preds = net(test_features).asnumpy()
     test_data['SalePrice'] = pd.Series(preds.reshape(1,-1)[0])
     submission = pd.concat([test_data['Id'],test_data['SalePrice']],axis=1)
-    submission.to_csv('submission.csv',index=False)
+    submission.to_csv('submission.csv',index=False) # index的意思是，是否保留行索引
 
 
 

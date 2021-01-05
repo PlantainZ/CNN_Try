@@ -24,9 +24,10 @@ net.add(nn.Conv2D(channels=6,kernel_size=5,activation='sigmoid'),
         nn.Dense(120,activation='sigmoid'),
         nn.Dense(84,activation='sigmoid'),
         nn.Dense(10))
+net.initialize()
+
 
 X = nd.random.normal(shape=(1,1,28,28))
-net.initialize()
 for layer in net:
     X=layer(X)
     print(layer.name,'output shape:\t',X.shape) # 可以这样看output信息！！！

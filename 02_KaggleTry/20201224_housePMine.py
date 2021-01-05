@@ -19,7 +19,6 @@ train_data = pd.read_csv(csv_path + '\\train.csv')
 test_data = pd.read_csv(csv_path + '\\test.csv')
 all_features = pd.concat((train_data.iloc[:,1:],test_data.iloc[:,1:]))
 
-
 # 2. 预处理
 numeric_features = all_features.dtypes[all_features.dtypes!='object'].index
 all_features[numeric_features] = all_features[numeric_features].apply(lambda x:(x-x.mean())/x.std())
@@ -46,11 +45,16 @@ def log_rmse(net,features,labels):
     clipped_preds = nd.clip(net(features),1,float('inf'))
     return nd.sqrt(2*loss(clipped_preds.log(),labels.log()).mean()).asscalar()
 
+def loss_rmse(net,x,y):
+    clipped_pred = nd.clip(net(x),1,float('inf'))
+    rmse = nd.sqrt(loss(clipped_pred.log(),y.log()).mean()).asscalar()
+    return rmse
+
 def train(net,train_features,train_labels,
           test_features,test_labels,
           num_epochs,batch_size,learning_rate,weight_decay):
     train_ls,test_ls= [],[]
-    train_iter = gdata.DataLoader(gdata.ArrayDataset((train_features,train_labels)))
+    train_iter = gdata.DataLoader(gdata.ArrayDataset((train_features,train_labels)),batch_size,shuffle=True)
     trainer = gluon.Trainer(net.collect_params(),'sgd',{'learning_rate':learning_rate,
                                                         'wd':weight_decay})
 
@@ -66,6 +70,7 @@ def train(net,train_features,train_labels,
         if test_labels is not None:
             test_ls.append(log_rmse(net,test_features,test_labels))
     return train_ls,test_ls
+
 
 # 4. k-fold验证
 def get_k_fold_data(k,i,X,y):
@@ -86,6 +91,8 @@ def get_k_fold_data(k,i,X,y):
             y_train = nd.concat(y_train,y_part,dim = 0)
     return x_train,y_train,x_valid,y_valid
 
+
+
 def k_fold(k,x_train,y_train,num_epochs,batch_size,learning_rate,weight_decay):
     train_l_sum ,valid_l_sum=0,0
 
@@ -98,11 +105,10 @@ def k_fold(k,x_train,y_train,num_epochs,batch_size,learning_rate,weight_decay):
 
         if(i==0):
             d2l.semilogy(range(1,num_epochs+1),train_ls,'epochs','rmse',
-                         range(1,num_epochs+1),valid_ls,)
-            d2l.semilogy(range(1,num_epochs+1),train_ls,'epochs','rmse',
                          range(1,num_epochs+1),valid_ls,
                          ['train','valid'])
         return train_l_sum/k,valid_l_sum/k
+
 
 # 5. 对照
 k,num_epochs,batch_size,learning_rate,weight_decay = 5,100,64,5,0
@@ -117,6 +123,16 @@ def train_and_pred(train_features,test_features,train_labels,test_data,
     d2l.semilogy(range(1,num_epochs+1),train_ls,'epochs','rmse')
 
     preds = net(test_features).asnumpy()
+    test_data['SalePrice'] = pd.Series(preds.reshape(1,-1)[0])
+    submission = pd.concat([test_data['ID'],test_data['SalePrice']],axis=1)
+    submission.to_csv('submission.csv',index=False)
+
+
+# 执行
+
+
+
+
 
 
 

@@ -13,7 +13,6 @@ from mxnet import autograd,nd
 from mxnet.gluon import data as gdata
 import sys,time
 
-
 # 1 # 数据生成( utils 1 )==========================================================================================
 mnist_train = gdata.vision.FashionMNIST(train = True)
 mnist_test = gdata.vision.FashionMNIST(train = False)
@@ -24,8 +23,16 @@ print('len of train: %d,len of test: %d ' %(len(mnist_train),len(mnist_test))) #
 # > 整一个transformer > (设置线程数) > DataLoader生成iter
 batch_size = 64
 # 看这！有变化。因为这个是从零实现
-train_iter,test_iter = d2l.load_data_fashion_mnist(batch_size)
+train_iter,test_iter = d2l.load_data_fashion_mnist(batch_size) # 这个函数的具体见上边的data.py
 
+def load_data_fashion_mnist(batch_size):
+    if sys.platform.startswith('win'):
+        num_workers = 0
+    else:
+        num_workers = 4
+
+    transformer = gdata.vision.transforms.ToTensor()
+    train_iter = gdata.DataLoader(mnist_train.transform_first(transformer),batch_size=batch_size,shuffle=True,num_workers=num_workers)
 
 # 3 # 定义Wb==========================================================================================
 num_inputs = 784
