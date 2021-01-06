@@ -20,19 +20,20 @@ print('len of train: %d,len of test: %d ' %(len(mnist_train),len(mnist_test))) #
 
 
 # 2 # 处理矩阵生成iter ========================================================================================
-# > 整一个transformer > (设置线程数) > DataLoader生成iter
-batch_size = 64
-# 看这！有变化。因为这个是从零实现
-train_iter,test_iter = d2l.load_data_fashion_mnist(batch_size) # 这个函数的具体见上边的data.py
-
-def load_data_fashion_mnist(batch_size):
+def get_num_workers(batch_size):
     if sys.platform.startswith('win'):
         num_workers = 0
     else:
         num_workers = 4
+    return num_workers
 
-    transformer = gdata.vision.transforms.ToTensor()
-    train_iter = gdata.DataLoader(mnist_train.transform_first(transformer),batch_size=batch_size,shuffle=True,num_workers=num_workers)
+# > 整一个transformer > (设置线程数) > DataLoader生成iter
+# 看这！有变化。因为这个是从零实现
+batch_size = 64
+transformer = gdata.vision.transforms.ToTensor()
+train_iter = gdata.DataLoader(mnist_train.transform_first(transformer),batch_size=batch_size,shuffle=True,num_workers=get_num_workers())
+test_iter = gdata.DataLoader(mnist_test.transform_first(transformer),batch_size=batch_size,shuffle=False,num_workers=get_num_workers())
+
 
 # 3 # 定义Wb==========================================================================================
 num_inputs = 784
@@ -60,6 +61,10 @@ def net(X):
     # nd.dot是专门进行矩阵乘法的！！
 
 def cross_entropy(y_hat,y):
+    # nd.pick(y_hat,y)
+    # y_hat:两个样本在3个类别的预测概率
+    # y:2个样本的标签类别
+    # nd.pick()：2个样本的标签的预测概率。
     return -nd.pick(y_hat,y).log()
 
 # *损失函数中的pick原理
