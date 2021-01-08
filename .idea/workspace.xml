@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210105 FsnMNIST Review">
-      <change afterPath="$PROJECT_DIR$/01_FsnMNIST/jn_FsnMNIST/__init__.py" afterDir="false" />
+    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210106 FsnMNIST Review day2">
+      <change afterPath="$PROJECT_DIR$/01_FsnMNIST/.ipynb_checkpoints/20201215_01_FsnMNIST_data-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/01_FsnMNIST/jn_FsnMNIST/20210106_FsnMNIST.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_FsnMNIST/20201215_01_FsnMNIST_data.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/01_FsnMNIST/jn_FsnMNIST/20201215_01_FsnMNIST_data.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/01_FsnMNIST/20201217_02_FsnMNIST.py" beforeDir="false" afterPath="$PROJECT_DIR$/01_FsnMNIST/20201217_02_FsnMNIST.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -306,7 +306,9 @@
       <workItem from="1609405759146" duration="1198000" />
       <workItem from="1609721604142" duration="14457000" />
       <workItem from="1609808454152" duration="13700000" />
-      <workItem from="1609894855330" duration="9184000" />
+      <workItem from="1609894855330" duration="11014000" />
+      <workItem from="1609982953206" duration="11888000" />
+      <workItem from="1610067996114" duration="1405000" />
     </task>
     <task id="LOCAL-00001" summary="20201214 linReg done.">
       <created>1607928753667</created>
@@ -427,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609831938480</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="20210106 FsnMNIST Review day2">
+      <created>1609917717177</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1609917717177</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -506,7 +515,8 @@
     <MESSAGE value="20201228 Kaggle example continued." />
     <MESSAGE value="20201231 kaggle example review." />
     <MESSAGE value="20210105 FsnMNIST Review" />
-    <option name="LAST_COMMIT_MESSAGE" value="20210105 FsnMNIST Review" />
+    <MESSAGE value="20210106 FsnMNIST Review day2" />
+    <option name="LAST_COMMIT_MESSAGE" value="20210106 FsnMNIST Review day2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

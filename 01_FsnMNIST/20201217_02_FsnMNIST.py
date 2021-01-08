@@ -46,7 +46,6 @@ b = nd.zeros(num_outputs)
 W.attach_grad()
 b.attach_grad()
 
-
 # 4 # 定义模型 (utils 2 & 3) =====================================================================
 def softmax(X):
     X_exp = X.exp() # 对每个元素进行底为e的指数计算，每一行都变成了非负数！
@@ -80,12 +79,20 @@ def accuracy(y_hat,y):
     # 因为标签类型是int，要把y 变成浮点数 再进行相等判断。
     return (y_hat.argmax(axis = 1)== y.astype('float32')).mean().asscalar()
 
+def evaluate_accuracy(data_iter,net):
+    acc_sum,n = 0.0,0
+    for X,y in data_iter:
+        y = y.astype('float32')
+        acc_sum += (net(X).argmax(axis=1) ==y).sum().asscalar()
+        n += y.size
+    return acc_sum / n
+
 # *accuracy函数的小测试
 print('accuracy test:',accuracy(y_hat,y))
 print('accuracy,d2l_test:',d2l.evaluate_accuracy(data_iter=test_iter,net = net))
 
 
-# 6 # 训练模型 =========================================================
+# 6 # 训练模型 =========================================================================================
 num_epoch ,lr = 5,0.1
 d2l.train_ch3(net,train_iter,test_iter,
               cross_entropy,
@@ -100,6 +107,8 @@ pred_labels = d2l.get_fashion_mnist_labels(net(X).argmax(axis=1).asnumpy())
 titles = [true + '\n' + pred for true,pred in zip(true_labels,pred_labels)]
 
 d2l.show_fashion_mnist(X[0:9],titles[0:9])
+
+
 
 
 
