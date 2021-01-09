@@ -17,13 +17,19 @@
  
 ## 计划 / **< 正在实现 >**
 > 制式：mxnet --> tensorflow 2.x
-- **< Fashion-MNIST >**
+- **< LeNet >**
+- AlexNet
+- NiN
+- GoogLeNet
+- ResNet
  
 &nbsp;
 
 
 ## 已实现
-- 线性回归 ( mxnet )
+- Linear regression ( mxnet )
+- FashionMNIST ( mxnet )
+- 【Kaggle】housePrice predict (mxnet)
 
 &nbsp;
 
@@ -41,3 +47,5 @@
 当然为了重温这些理论，也为了学习tf 2.x去制作别的东西。
 
 转TF2不一定同时！！！很多理论的套路还没完善。
+
+**另：赞美 jupyter!!!!!yyds!!!! **
