@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210109 LeNet Day1" />
+    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210109 LeNet Day1">
+      <change beforePath="$PROJECT_DIR$/03_basicNet/.ipynb_checkpoints/Untitled-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_basicNet/20210111_Alexnet.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/20210111_Alexnet.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_basicNet/Untitled.ipynb" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -305,6 +309,7 @@
       <workItem from="1609982953206" duration="11888000" />
       <workItem from="1610067996114" duration="1579000" />
       <workItem from="1610154116184" duration="2436000" />
+      <workItem from="1610519751391" duration="134000" />
     </task>
     <task id="LOCAL-00001" summary="20201214 linReg done.">
       <created>1607928753667</created>
