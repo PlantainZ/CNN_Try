@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210202 patch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_basicNet/.ipynb_checkpoints/20210204_ResNet-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/.ipynb_checkpoints/20210204_ResNet-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_basicNet/20210116_GoogLeNet.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/20210116_GoogLeNet.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_basicNet/20210204_ResNet.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/20210204_ResNet.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,6 +316,8 @@
       <workItem from="1612148077612" duration="4403000" />
       <workItem from="1612230063282" duration="1592000" />
       <workItem from="1612420145808" duration="1423000" />
+      <workItem from="1612508407310" duration="3556000" />
+      <workItem from="1612667796014" duration="1457000" />
     </task>
     <task id="LOCAL-00001" summary="20201214 linReg done.">
       <created>1607928753667</created>
