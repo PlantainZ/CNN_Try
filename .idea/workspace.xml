@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210202 patch">
+    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210207 ResNet refine.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_basicNet/.ipynb_checkpoints/20210204_ResNet-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/.ipynb_checkpoints/20210204_ResNet-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_basicNet/20210116_GoogLeNet.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/20210116_GoogLeNet.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_basicNet/20210204_ResNet.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/20210204_ResNet.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_basicNet/.ipynb_checkpoints/20210206_ResNet_Mine-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/.ipynb_checkpoints/20210206_ResNet_Mine-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_basicNet/20210109_LeNet_Mine.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/20210109_LeNet_Mine.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_basicNet/20210206_ResNet_Mine.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/20210206_ResNet_Mine.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +317,8 @@
       <workItem from="1612230063282" duration="1592000" />
       <workItem from="1612420145808" duration="1423000" />
       <workItem from="1612508407310" duration="3556000" />
-      <workItem from="1612667796014" duration="1457000" />
+      <workItem from="1612667796014" duration="1513000" />
+      <workItem from="1612746203898" duration="2476000" />
     </task>
     <task id="LOCAL-00001" summary="20201214 linReg done.">
       <created>1607928753667</created>
@@ -487,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612246412127</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="20210207 ResNet refine.">
+      <created>1612678049842</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1612678049842</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -573,7 +581,8 @@
     <MESSAGE value="20210201 BN layer review." />
     <MESSAGE value="20210202 BN-LeNet learning." />
     <MESSAGE value="20210202 patch" />
-    <option name="LAST_COMMIT_MESSAGE" value="20210202 patch" />
+    <MESSAGE value="20210207 ResNet refine." />
+    <option name="LAST_COMMIT_MESSAGE" value="20210207 ResNet refine." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
