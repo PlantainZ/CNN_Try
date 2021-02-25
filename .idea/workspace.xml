@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210207 ResNet refine.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_basicNet/.ipynb_checkpoints/20210206_ResNet_Mine-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/.ipynb_checkpoints/20210206_ResNet_Mine-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_basicNet/20210109_LeNet_Mine.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/20210109_LeNet_Mine.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_basicNet/20210206_ResNet_Mine.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/20210206_ResNet_Mine.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03_basicNet/20210208_DenseNet.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/03_basicNet/20210208_DenseNet.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +119,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../OnO_Else/kessk-switch-master/kessk-switch-master/kessk_web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -319,6 +317,11 @@
       <workItem from="1612508407310" duration="3556000" />
       <workItem from="1612667796014" duration="1513000" />
       <workItem from="1612746203898" duration="2476000" />
+      <workItem from="1613782806749" duration="2851000" />
+      <workItem from="1613869577431" duration="55000" />
+      <workItem from="1614043119752" duration="4863000" />
+      <workItem from="1614128656544" duration="1424000" />
+      <workItem from="1614147133329" duration="788000" />
     </task>
     <task id="LOCAL-00001" summary="20201214 linReg done.">
       <created>1607928753667</created>
