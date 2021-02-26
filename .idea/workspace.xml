@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210207 ResNet refine.">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210225 readme update.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_enhance/.ipynb_checkpoints/20210225_miniBatchGradientDesent-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/04_enhance/.ipynb_checkpoints/20210225_miniBatchGradientDesent-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_enhance/20210225_miniBatchGradientDesent.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/04_enhance/20210225_miniBatchGradientDesent.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -321,7 +323,8 @@
       <workItem from="1614043119752" duration="4863000" />
       <workItem from="1614128656544" duration="1424000" />
       <workItem from="1614147133329" duration="788000" />
-      <workItem from="1614235958229" duration="634000" />
+      <workItem from="1614235958229" duration="773000" />
+      <workItem from="1614301722458" duration="2323000" />
     </task>
     <task id="LOCAL-00001" summary="20201214 linReg done.">
       <created>1607928753667</created>
@@ -498,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612678049842</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="20210225 readme update.">
+      <created>1614236611916</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1614236611916</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -585,7 +595,8 @@
     <MESSAGE value="20210202 BN-LeNet learning." />
     <MESSAGE value="20210202 patch" />
     <MESSAGE value="20210207 ResNet refine." />
-    <option name="LAST_COMMIT_MESSAGE" value="20210207 ResNet refine." />
+    <MESSAGE value="20210225 readme update." />
+    <option name="LAST_COMMIT_MESSAGE" value="20210225 readme update." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
