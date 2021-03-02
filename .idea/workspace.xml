@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210226 gradientDesent review.">
+    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210301 gradientDesent review round2.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -324,7 +324,7 @@
       <workItem from="1614235958229" duration="773000" />
       <workItem from="1614301722458" duration="2725000" />
       <workItem from="1614474053198" duration="1782000" />
-      <workItem from="1614561634636" duration="2778000" />
+      <workItem from="1614561634636" duration="2885000" />
     </task>
     <task id="LOCAL-00001" summary="20201214 linReg done.">
       <created>1607928753667</created>
@@ -515,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614321914674</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="20210301 gradientDesent review round2.">
+      <created>1614583486263</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1614583486263</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -578,7 +585,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="20201214 patch" />
     <MESSAGE value="20201215 dataSet process" />
     <MESSAGE value="20201215 readme plan patch" />
     <MESSAGE value="20201215 LinearRegression , mxnet--&gt;tensorflow 2.x" />
@@ -603,7 +609,8 @@
     <MESSAGE value="20210207 ResNet refine." />
     <MESSAGE value="20210225 readme update." />
     <MESSAGE value="20210226 gradientDesent review." />
-    <option name="LAST_COMMIT_MESSAGE" value="20210226 gradientDesent review." />
+    <MESSAGE value="20210301 gradientDesent review round2." />
+    <option name="LAST_COMMIT_MESSAGE" value="20210301 gradientDesent review round2." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
