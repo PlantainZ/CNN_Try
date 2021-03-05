@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210301 gradientDesent review round2." />
+    <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210301 gradientDesent review round2.">
+      <change beforePath="$PROJECT_DIR$/05_calculate/.ipynb_checkpoints/20210302_momentum-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/05_calculate/.ipynb_checkpoints/20210302_momentum-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_calculate/20210302_momentum.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/05_calculate/20210302_momentum.ipynb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -324,6 +327,7 @@
       <workItem from="1614474053198" duration="1782000" />
       <workItem from="1614561634636" duration="2885000" />
       <workItem from="1614670397430" duration="11000" />
+      <workItem from="1614911643692" duration="659000" />
     </task>
     <task id="LOCAL-00001" summary="20201214 linReg done.">
       <created>1607928753667</created>
