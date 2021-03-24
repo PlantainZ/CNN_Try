@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210301 gradientDesent review round2.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05_calculate/20210305_AdaGrad.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/05_calculate/20210305_AdaGrad.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05_calculate/20210306_RMSProp.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/05_calculate/20210306_RMSProp.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_calculate/.ipynb_checkpoints/20210315_allCollector-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/05_calculate/.ipynb_checkpoints/20210315_allCollector-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/05_calculate/20210315_allCollector.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/05_calculate/20210315_allCollector.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -333,7 +332,10 @@
       <workItem from="1615424820330" duration="1908000" />
       <workItem from="1615793364643" duration="641000" />
       <workItem from="1615880043472" duration="20000" />
-      <workItem from="1615951669326" duration="2130000" />
+      <workItem from="1615951669326" duration="4619000" />
+      <workItem from="1616051944338" duration="3539000" />
+      <workItem from="1616547751247" duration="1984000" />
+      <workItem from="1616553803274" duration="757000" />
     </task>
     <task id="LOCAL-00001" summary="20201214 linReg done.">
       <created>1607928753667</created>
