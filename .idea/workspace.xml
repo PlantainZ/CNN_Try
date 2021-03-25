@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b80493d2-1a35-4050-967f-bdb80d0c6bc7" name="Default Changelist" comment="20210301 gradientDesent review round2.">
-      <change afterPath="$PROJECT_DIR$/06_imgProcess/logo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_imgProcess/.ipynb_checkpoints/20210324_Expand-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/06_imgProcess/.ipynb_checkpoints/20210324_Expand-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_imgProcess/20210324_Expand.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/06_imgProcess/20210324_Expand.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06_imgProcess/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/06_imgProcess/lxg_logo.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -335,7 +337,9 @@
       <workItem from="1615951669326" duration="4619000" />
       <workItem from="1616051944338" duration="3539000" />
       <workItem from="1616547751247" duration="1984000" />
-      <workItem from="1616553803274" duration="4087000" />
+      <workItem from="1616553803274" duration="4753000" />
+      <workItem from="1616634446777" duration="132000" />
+      <workItem from="1616638395463" duration="3866000" />
     </task>
     <task id="LOCAL-00001" summary="20201214 linReg done.">
       <created>1607928753667</created>
